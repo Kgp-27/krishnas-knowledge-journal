@@ -1,6 +1,7 @@
 ---
 import Navigation from "./Navigation.astro";
 import Hero from "./Hero.astro";
+const { showHero = false } = Astro.props;
 ---
 
 <header class="hero">
@@ -12,7 +13,5 @@ Understanding Finance from First Principles
 </p>
 
 <Navigation />
-
-<Hero />
-
+{showHero && <Hero />}
 </header>
