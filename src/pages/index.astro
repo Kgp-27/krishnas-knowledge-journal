@@ -1,0 +1,76 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Hero from "../components/Hero.astro";
+import ArticleCard from "../components/ArticleCard.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<Layout title="Krishna's Knowledge Journal">
+
+<Header />
+
+<main>
+
+<section>
+
+<h2>Explore Topics</h2>
+
+<div class="cards">
+
+<ArticleCard
+title="Finance"
+text="Money, wealth creation, investing and financial markets explained from the ground up."
+/>
+
+<ArticleCard
+title="Economics"
+text="Microeconomics, macroeconomics, incentives, growth and public policy."
+/>
+
+<ArticleCard
+title="Indian Banking"
+text="RBI, commercial banks, regulation and India's financial architecture."
+/>
+
+<ArticleCard
+title="Taxation"
+text="Income tax, GST, Union Budget and practical tax concepts."
+/>
+
+<ArticleCard
+title="History"
+text="Economic, financial and institutional history that provides modern context."
+/>
+
+</div>
+
+</section>
+
+<section>
+
+<h2>Latest Articles</h2>
+
+<ArticleCard
+title="Coming Soon"
+text="The first series of articles is currently being prepared. Future articles will be organised by topic and publication date."
+/>
+
+</section>
+
+<section>
+
+<h2>Mission</h2>
+
+<ArticleCard
+title="Mission"
+text="To build a long-term knowledge journal that explains finance, economics, banking, taxation and history through careful research, logical reasoning and first-principles thinking."
+/>
+
+</section>
+
+</main>
+
+<Footer />
+
+</Layout>

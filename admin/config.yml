@@ -1,0 +1,43 @@
+backend:
+  name: github
+  repo: YOUR_GITHUB_USERNAME/krishnas-knowledge-journal
+  branch: main
+
+media_folder: "public/images/uploads"
+public_folder: "/images/uploads"
+
+publish_mode: editorial_workflow
+
+collections:
+  - name: "articles"
+    label: "Articles"
+    folder: "src/content/articles"
+    create: true
+    slug: "{{slug}}"
+
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+
+      - { label: "Description", name: "description", widget: "text" }
+
+      - label: "Topic"
+        name: "topic"
+        widget: "select"
+        options:
+          - Finance
+          - Economics
+          - Indian Banking
+          - Taxation
+          - History
+
+      - { label: "Tags", name: "tags", widget: "list" }
+
+      - { label: "Featured", name: "featured", widget: "boolean", default: false }
+
+      - { label: "Draft", name: "draft", widget: "boolean", default: false }
+
+      - { label: "Cover Image", name: "cover", widget: "image", required: false }
+
+      - { label: "Publish Date", name: "pubDate", widget: "datetime" }
+
+      - { label: "Body", name: "body", widget: "markdown" }

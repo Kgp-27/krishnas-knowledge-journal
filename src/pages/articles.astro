@@ -1,0 +1,67 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { getCollection } from "astro:content";
+
+const articles = await getCollection("articles");
+
+articles.sort(
+(a,b)=>
+b.data.pubDate.valueOf()-a.data.pubDate.valueOf()
+);
+---
+
+<Layout title="Articles">
+
+<Header />
+
+<main>
+
+<h2>Articles</h2>
+
+<div class="cards">
+
+{
+articles.map(article=>(
+
+<div class="card">
+
+<h3>
+
+<a href={`/articles/${article.slug}`}>
+
+{article.data.title}
+
+</a>
+
+</h3>
+
+<p>
+
+{article.data.description}
+
+</p>
+
+<p>
+
+<strong>
+
+{article.data.topic}
+
+</strong>
+
+</p>
+
+</div>
+
+))
+}
+
+</div>
+
+</main>
+
+<Footer />
+
+</Layout>
